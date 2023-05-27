@@ -1,17 +1,15 @@
 <?php
-session_start();
-
-// cek apakah sudah login atau belum
-if (isset($_SESSION['login'])) {
-  header("Locaition: index.php");
-  exit;
-}
-
 require 'functions.php';
 
-// ketika tombol login ditekan
-if (isset($_POST['login'])) {
-  $login = login($_POST);
+if (isset($_POST["register"])) {
+  if (registrasi($_POST) > 0) {
+    echo "<script>
+    alert('User baru berhasil ditambahkan, silahkan login');
+    document.location.href = 'login.php';
+    </script>";
+  } else {
+    echo mysqli_error(koneksi());
+  }
 }
 ?>
 
@@ -22,38 +20,34 @@ if (isset($_POST['login'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Login</title>
+  <title>Registrasi</title>
 </head>
 
 <body>
-  <h3>Form Login</h3>
-  <?php if (isset($login['error'])) : ?>
-    <p><?= $login['pesan']; ?></p>
-  <?php endif; ?>
+  <h3>Halaman Registrasi</h3>
   <form action="" method="post">
     <ul>
       <li>
         <label>
-          Username
+          Username :
           <input type="text" name="username" autofocus autocomplete="off" required>
         </label>
       </li>
       <li>
         <label>
-          Password
+          Password :
           <input type="password" name="password" required>
         </label>
       </li>
       <li>
         <label>
-          Remember me
-          <input type="checkbox" name="remember">
+          Konfirmasi Password :
+          <input type="password" name="password2" required>
         </label>
       </li>
       <li>
-        <button type="submit" name="login">Login</button>
+        <button type="submit" name="register">Registrasi</button>
       </li>
-      <a href="registrasi.php">Tambah User Baru</a>
     </ul>
   </form>
 </body>
