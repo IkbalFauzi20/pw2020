@@ -73,17 +73,19 @@ if (isset($_POST["ubah"])) {
         </label>
       </li>
       <li>
+        <input type="hidden" name="gambar_lama" value="<?= $mhs["gambar"]; ?>">
         <label>
           Gambar
-          <input type="text" name="gambar" placeholder="gambar" required value="<?= $mhs["gambar"]; ?>">
+          <input type="file" name="gambar" class="gambar" onchange="imagePreview()" />
         </label>
+        <img src="img/<?= $mhs["gambar"]; ?>" width="120px" style="display: block;" class="img-preview">
       </li>
       <li>
         <button type="submit" name="ubah">Ubah Data!</button>
       </li>
     </ul>
   </form>
-
+  <script src="js/script.js"></script>
 </body>
 
 </html>

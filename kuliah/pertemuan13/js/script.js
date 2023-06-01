@@ -3,7 +3,6 @@ const keyword = document.querySelector('.keyword');
 const container = document.querySelector('.container');
 
 // hilangkan tombol cari
-
 tombolCari.style.display = 'none';
 
 // event ketika kita menuliskan keyword
@@ -26,3 +25,28 @@ keyword.addEventListener('keyup', function(){
   .then((response) => response.text())
   .then((response) => (container.innerHTML = response));
 });
+
+// preview image
+// const gambar = document.querySelector('.gambar');
+// gambar.addEventListener('onchange', function(){
+//   const imgPreview = document.querySelector('.img-preview');
+
+//   const oFReader = new FileReader();
+//   oFReader.readAsDataURL(gambar.files[0]);
+
+//   oFReader.onload = function (oFREvent) {
+//     imgPreview.src = oFREvent.target.result;
+//   };
+// });
+
+function imagePreview(){
+  const gambar = document.querySelector('.gambar');
+  const imgPreview = document.querySelector('.img-preview');
+
+  const oFReader = new FileReader();
+  oFReader.readAsDataURL(gambar.files[0]);
+
+  oFReader.onload = function (oFREvent) {
+  imgPreview.src = oFREvent.target.result;
+  };
+}
