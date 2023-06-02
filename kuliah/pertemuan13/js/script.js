@@ -1,12 +1,12 @@
-const tombolCari = document.querySelector('.tombol-cari');
-const keyword = document.querySelector('.keyword');
-const container = document.querySelector('.container');
+const tombolCari = document.querySelector(".tombol-cari");
+const keyword = document.querySelector(".keyword");
+const container = document.querySelector(".container");
 
 // hilangkan tombol cari
-tombolCari.style.display = 'none';
+tombolCari.style.display = "none";
 
 // event ketika kita menuliskan keyword
-keyword.addEventListener('keyup', function(){
+keyword.addEventListener("keyup", function () {
   // jalankan ajax
   // xmlhttprequest
   // const xhr = new XMLHttpRequest();
@@ -21,9 +21,9 @@ keyword.addEventListener('keyup', function(){
   // xhr.send();
 
   // fetch
-  fetch('ajax/ajax_cari.php?keyword='+ keyword.value)
-  .then((response) => response.text())
-  .then((response) => (container.innerHTML = response));
+  fetch("ajax/ajax_cari.php?keyword=" + keyword.value)
+    .then((response) => response.text())
+    .then((response) => (container.innerHTML = response));
 });
 
 // preview image
@@ -39,14 +39,29 @@ keyword.addEventListener('keyup', function(){
 //   };
 // });
 
-function imagePreview(){
-  const gambar = document.querySelector('.gambar');
-  const imgPreview = document.querySelector('.img-preview');
+function imagePreview() {
+  const gambar = document.querySelector(".gambar");
+  const imgPreview = document.querySelector(".img-preview");
 
   const oFReader = new FileReader();
   oFReader.readAsDataURL(gambar.files[0]);
 
   oFReader.onload = function (oFREvent) {
-  imgPreview.src = oFREvent.target.result;
+    imgPreview.src = oFREvent.target.result;
   };
 }
+
+const navbarNav = document.querySelector(".navbar-nav");
+
+document.querySelector("#hamburger-menu").onclick = () => {
+  navbarNav.classList.toggle("active");
+};
+
+// klik diluar sidebar untuk menghilangkan nav
+const hamburger = document.querySelector("#hamburger-menu");
+
+document.addEventListener("click", function (e) {
+  if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+    navbarNav.classList.remove("active");
+  }
+});

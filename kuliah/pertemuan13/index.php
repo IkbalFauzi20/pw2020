@@ -28,11 +28,37 @@ if (isset($_POST["cari"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daftar Mahasiswa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Geologica:wght@100;300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!-- Feather Icons -->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<!-- My Style -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <a href="logout.php">Logout</a>
-  <h3>Daftar Mahasiswa</h3>
+
+<!-- Navbar Start -->
+<nav class="navbar">
+  <a href="#" class="navbar-logo">Data <span>Mahasiswa</span></a>
+  <div class="navbar-nav">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#data">Daftar Mahasiswa</a>
+    <a href="#tambah.php">Tambah Data</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="navbar-extra">
+    <a href="logout.php"><i data-feather="log-out"></i></a>
+    <a href="#" id="hamburger-menu"><i data-feather="menu"></i></i></a>
+  </div>
+</nav>
+<!-- Navbar End -->
   <a href="tambah.php">Tambah Data Mahasiswa</a>
   <br><br>
   <form action="" method="post">
@@ -69,8 +95,13 @@ if (isset($_POST["cari"])) {
       <?php endforeach; ?>
     </table>
   </div>
+  <!-- Feather Icons -->
+  <script>
+      feather.replace()
+    </script>
 
-  <script src="js/script.js"></script>
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
