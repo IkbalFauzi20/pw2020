@@ -70,8 +70,26 @@ if (isset($_POST["cari"])) {
   </main>
 </section>
 
-
 <!-- Hero Section End -->
+
+<!-- About Section Start -->
+<section id="about" class="about">
+  <h3>Tentang Saya</h3>
+
+  <div class="row">
+    <div class="about-img">
+      <img src="img/img3.jpg" alt="Tenant Saya">
+    </div>
+    <div class="content">
+      <h2>Kenapa memilih saya ?</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus quidem expedita ab magni esse placeat.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo accusantium perspiciatis placeat. Dignissimos asperiores quos minus? Modi, cumque! Enim, aut.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About Section End -->
+
 
   <a href="tambah.php">Tambah Data Mahasiswa</a>
   <br><br>
