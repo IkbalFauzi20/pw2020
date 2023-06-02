@@ -47,7 +47,7 @@ if (isset($_POST["cari"])) {
 <nav class="navbar">
   <a href="#" class="navbar-logo">Data <span>Mahasiswa</span></a>
   <div class="navbar-nav">
-    <a href="#">Home</a>
+    <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#data">Daftar Mahasiswa</a>
     <a href="#tambah.php">Tambah Data</a>
@@ -59,6 +59,20 @@ if (isset($_POST["cari"])) {
   </div>
 </nav>
 <!-- Navbar End -->
+
+<!-- Hero Section Start-->
+
+<section class="hero" id="home">
+  <main class="content">
+    <h1>Selamat Datang Generasi Muda</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, omnis.</p>
+    <a href="#" class="cta">Lihat Sekarang</a>
+  </main>
+</section>
+
+
+<!-- Hero Section End -->
+
   <a href="tambah.php">Tambah Data Mahasiswa</a>
   <br><br>
   <form action="" method="post">
